@@ -13,12 +13,12 @@ const SupplierContainer = (supplier) => {
     <img src={s.cardImage}></img>
     <div className='product-details'>
         <a href={`/suppliers/${s.id}`}>
-            <button className='producttitle'>{s.supplierName}</button>
+            <div className='producttitle'>{s.supplierName}</div>
         </a>
 
         <div className='price-container'>
-            <p className='saleprice'>{s.supplierContact}</p>
-            <p className='yousave'>{s.supplierAddress}</p>
+            <div className='saleprice'>contact: {s.supplierContact}</div>
+            <div className='yousave'>{s.supplierAddress}</div>
         </div>
 
     

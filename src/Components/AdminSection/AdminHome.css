@@ -1,0 +1,17 @@
+.page{
+    
+        background-color: #ffbb00;
+        display: flex;
+        justify-content: center;
+    
+    
+}
+.page button{
+    background-color: #ffbb00;
+    padding: 0px 5px;
+    margin: 8px 15px;
+    border: 2px solid white;
+    color: white;
+    border-radius: 5px;
+    font-size: 13px;
+}

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
- import { storage, auth, db } from '../../FirebaseConfigs/firebaseConfig'
+import { storage, auth, db } from '../../FirebaseConfigs/firebaseConfig'
 import { collection, getDocs, query, where, addDoc } from 'firebase/firestore'
 import { useNavigate } from 'react-router-dom'
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
@@ -7,6 +7,7 @@ import Navbar from '../Navbar'
 import './AddSupplier.css'
 import Qrscan from '../QrcodeFunctionality/Qrscan';
 import { Path } from 'react-router-dom';
+import AdminHome from './AdminHome';
 
 const AddSupplier = () => {
     const [supplierName, setSupplierName] = useState("");
@@ -79,7 +80,7 @@ const AddSupplier = () => {
         uploadBytes(storageRef, cardImage)
             .then(() => {
                 getDownloadURL(storageRef).then(url => {
-                    addDoc(collection(db, `suppliers`), {
+                    addDoc(collection(db, 'suppliers'), {
                         supplierName,
                         supplierContact,
                         supplierAddress,
@@ -98,7 +99,7 @@ const AddSupplier = () => {
 
     return (
         <div>
-            <Navbar />
+            <AdminHome/>
             {loggeduser && loggeduser[0].email == "hozef110@gmail.com" ?
                 <div className='addprod-container'>
                     <form onSubmit={handleAddSupplier} className='addprod-form'>

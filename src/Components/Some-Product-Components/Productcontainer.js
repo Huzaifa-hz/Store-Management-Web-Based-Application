@@ -1,9 +1,9 @@
 import React from 'react'
 import './Productcontainer.css'
 import { Link } from 'react-router-dom';
-const Productcontainer = (product) => {
 
-    
+
+const Productcontainer = (product) => {    
     // console.log(p)
      let p = product.product
     let overalltax = 10 / 100;
@@ -20,6 +20,7 @@ const Productcontainer = (product) => {
 
             <img src={p.prodimage}></img>
             <div className='product-details'>
+            
                 <a href={`/product/${p.producttype}/${p.id}`}>
                     <button className='producttitle'>{p.producttitle}</button>
                 </a>
@@ -29,6 +30,8 @@ const Productcontainer = (product) => {
                     <p className='saleprice'>Discount Price: <p className='rate'>₹{parseInt(product.product.price)}</p></p>
                     <p className='yousave'>You Save: ₹{mrp - saleprice}</p>
                 </div>
+
+
                 <Link to={`/product/${p.producttype}/${p.id}`}><button className='showmore-btn'>More Details &gt;</button></Link>
 
             </div>

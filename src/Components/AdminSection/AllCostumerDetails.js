@@ -11,6 +11,8 @@ import {
 
 //import ProductContainerAdmin from './ProductContainerAdmin'; 
 import { storage, auth, db } from '../../FirebaseConfigs/firebaseConfig'
+import AdminHome from './AdminHome';
+import CostumerCard from './CustomerCard';
 
 const AllCostumerDetails = () => {
 
@@ -47,7 +49,7 @@ const AllCostumerDetails = () => {
         const getUsers = () => {
 
             const usersArray = [];
-            const path = `users`
+            const path = 'users'
             // console.log(props)
 
             getDocs(collection(db, path)).then((querySnapshot) => {
@@ -67,11 +69,11 @@ const AllCostumerDetails = () => {
 
   return (
     <div className='allproductpage'>
-    <Navbar />
+    <AdminHome/>
     <div className="allproductcontainer">
           {users.map((user) => (
-              <AllCostumerDetails
-                  key={users.id}
+              <CostumerCard
+                  key={user.id}
                   user={user}
               />   ))}
       </div>

@@ -8,6 +8,7 @@ import Navbar from '../Navbar'
 import './AddProduct.css'
 import Qrscan from '../QrcodeFunctionality/Qrscan';
 import { Path } from 'react-router-dom';
+import AdminHome from './AdminHome';
 
 const Addproduct = () => {
     const [producttitle, setProductTitle] = useState("");
@@ -19,6 +20,7 @@ const Addproduct = () => {
     const [price, setPrice] = useState("")
     const [warranty, setWarranty] = useState("")
     const [productimage, setProductImage] = useState("")
+    const [SupplierName, setSupplierName] = useState("")
 
     const navigate = useNavigate()
     const [imageError, setImageError] = useState('');
@@ -105,7 +107,7 @@ const Addproduct = () => {
 
     return (
         <div>
-            <Navbar />
+            <AdminHome/>
             {loggeduser && loggeduser[0].email == "hozef110@gmail.com" ?
                 <div className='addprod-container'>
                     <form onSubmit={handleAddProduct} className='addprod-form'>
@@ -123,6 +125,8 @@ const Addproduct = () => {
                         <input onChange={(e) => setProductType(e.target.value)} type="text" placeholder="Product Type" />
                         <label>Brand Name </label>
                         <input onChange={(e) => setBrand(e.target.value)} type="text" placeholder="Brand Name" />
+                        <label>Supplier Name </label>
+                        <input onChange={(e) => setSupplierName(e.target.value)} type="text" placeholder="Supplier Name" />
                         {/* <label>warranty</label>
                         <input onChange={(e) => setWarranty(e.target.value)} type="text" placeholder="Product Warranty" /> */}
                         <label>Image</label>

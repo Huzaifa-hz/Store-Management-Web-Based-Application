@@ -22,6 +22,7 @@ import Specificproductpage from './Components/Some-Product-Components/Specificpr
 import Cart from './Components/Cart';
 import AllSupplierDetails from './Components/AdminSection/AllSupplierDetails';
 import AllCostumerDetails from './Components/AdminSection/AllCostumerDetails';
+import SalesHistoryDetails from './Components/AdminSection/SalesHistoryDetails';
 
 function App() {
 
@@ -47,6 +48,7 @@ function App() {
         <Route exact path="/addsupplier" element={<AddSupplier/>} />
         <Route exact path="/supplierList" element={<AllSupplierDetails/>} />
         <Route exact path="/costumerlist" element={<AllCostumerDetails/>} />
+        <Route exact path="/sales-history" element={<SalesHistoryDetails/>} />
 
 
         

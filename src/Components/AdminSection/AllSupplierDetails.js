@@ -11,7 +11,8 @@ import {
 
 //import ProductContainerAdmin from './ProductContainerAdmin'; 
 import { storage, auth, db } from '../../FirebaseConfigs/firebaseConfig'
-import CostumerCard from './CostumerCard';
+import CostumerCard from './CustomerCard';
+import AdminHome from './AdminHome';
 
 
 const AllSupplierDetails = () => {
@@ -41,7 +42,7 @@ const AllSupplierDetails = () => {
     const loggeduser = GetCurrentUser();
    
 
-    const [supplier, setSupplier] = useState([]);
+    const [suppliers, setSuppliers] = useState([]);
     useEffect(() => {
 
         const getSuppliers = () => {
@@ -55,7 +56,7 @@ const AllSupplierDetails = () => {
                     // console.log(doc.id, " => ", doc.data());
                     suppliersArray.push({ ...doc.data(), id: doc.id })
                 });
-                setSupplier(suppliersArray)
+                setSuppliers(suppliersArray)
                 // console.log('done')
             }).catch('Error error error')
         }
@@ -67,9 +68,9 @@ const AllSupplierDetails = () => {
 
   return (
     <div className='allproductpage'>
-      <Navbar />
+      <AdminHome/>
       <div className="allproductcontainer">
-            {supplier.map((supplier) => (
+            {suppliers.map((supplier) => (
                 <SupplierContainer
                     key={supplier.id}
                     supplier={supplier}

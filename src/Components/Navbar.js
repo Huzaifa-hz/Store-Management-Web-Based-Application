@@ -93,7 +93,8 @@ const Navbar = () => {
 
                     {loggeduser && <nav>
                         <Link to='/' ><button>Home</button></Link>
-                        <Link to='/admin'><button>Admin</button></Link>
+                        {loggeduser && loggeduser[0].email == "hozef110@gmail.com" ?
+                        <Link to='/admin'><button>Admin</button></Link>: <></>}
                         {/* <Link to='/signup'><button>Register</button></Link> */}
                         {/* <Link to='/login'><button>Login</button></ Link > */}
 

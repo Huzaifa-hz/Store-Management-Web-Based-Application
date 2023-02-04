@@ -26,11 +26,13 @@ const ProductContainerAdmin = (product) => {
       
     }
 
-
+    const sty={
+        width : "50px"
+    }
 
     return (
         <div className='product-container'>
-            <img className='delete-icon' onClick={deleteitem}   src={deleteIcon}/> 
+            <img className='delete-icon'  style={sty}onClick={deleteitem}   src={deleteIcon}/> 
             <img src={p.prodimage}/> 
             <div className='product-details'>
                 <a href={`/product/${p.producttype}/${p.id}`}>

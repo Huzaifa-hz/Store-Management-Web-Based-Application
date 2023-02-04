@@ -45,6 +45,11 @@ const CartCard = (props) => {
         await deleteDoc(doc(db, `cart-${props.userid}`, `${props.itemdata.id}`)).then(() => { console.log('doc deleted') })
     }
 
+        // const deleteAllcartItem=async () => {
+        //     await deleteDoc(doc(db, `cart-${props.userid}`, `${props.itemdata.id}`)).then(() => { console.log('doc deleted') })
+        // }
+        
+
 
     
     return (

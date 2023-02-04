@@ -1,17 +1,17 @@
 import React from 'react'
-import './CostumerCard.css'
+import './CustomerCard.css'
 import { Link } from 'react-router-dom';
 
-const CostumerCard = (user) => {
+const CustomerCard = (user) => {
 
-    let s=user.users;
+    let s=user.user;
 
   return (
     <div className='product-container'>
 
     {/* <img src={s.cardImage}> </img> */}
     <div className='product-details'>
-        <a href={`/suppliers/${s.id}`}>
+        <a href={`/users/${s.id}`}>
             <button className='producttitle'>{s.username}</button>
         </a>
 
@@ -25,4 +25,4 @@ const CostumerCard = (user) => {
   )
 }
 
-export default CostumerCard
+export default CustomerCard
